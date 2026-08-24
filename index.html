@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f6f7f2" />
+    <title>Loopline | Campus transit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="sidebar">
+        <div class="brand"><span class="brand-mark">↗</span><span>loopline</span></div>
+        <div class="campus-switcher"><span class="campus-dot"></span><span>Northbridge University</span><span class="chevron">⌄</span></div>
+        <nav aria-label="Primary navigation">
+          <a class="nav-item active" href="#overview"><span>◉</span>Overview</a>
+          <a class="nav-item" href="#routes"><span>⌁</span>Routes</a>
+          <a class="nav-item" href="#stops"><span>⌖</span>Stops</a>
+          <a class="nav-item" href="#alerts"><span>♧</span>Alerts <b class="nav-badge">2</b></a>
+        </nav>
+        <div class="sidebar-bottom">
+          <a class="nav-item" href="#help"><span>?</span>Help center</a>
+          <div class="profile"><div class="avatar">JM</div><div><strong>Jordan Miller</strong><small>Student account</small></div><span class="more">•••</span></div>
+        </div>
+      </aside>
+
+      <section class="content" id="overview">
+        <header class="topbar">
+          <div><p class="eyebrow">MONDAY, OCTOBER 14, 2024</p><h1>Good morning, Jordan <span class="sun">✦</span></h1></div>
+          <div class="top-actions"><span class="sync-status"><i></i>Updated <span id="clock">8:42:16 AM</span></span><button class="icon-button" aria-label="Notifications">♢<span class="notification-dot"></span></button><button class="avatar avatar-button">JM</button></div>
+        </header>
+
+        <div class="alert-banner" id="alertBanner"><div class="alert-icon">!</div><div><strong>Service note</strong><p>Green Loop is running 5 minutes late due to construction near Arts Quad.</p></div><button class="close-alert" aria-label="Dismiss service note">×</button></div>
+
+        <div class="dashboard-grid">
+          <section class="map-panel panel" id="routes">
+            <div class="panel-heading"><div><p class="eyebrow">LIVE MAP</p><h2>Campus network</h2></div><div class="map-legend"><span><i class="legend-bus"></i>Live buses</span><span><i class="legend-stop"></i>Stops</span></div></div>
+            <div class="map-canvas" aria-label="Stylized campus map with live buses">
+              <div class="map-label label-library">LIBRARY</div><div class="map-label label-student">STUDENT<br />CENTER</div><div class="map-label label-arts">ARTS<br />QUAD</div><div class="map-label label-science">SCIENCE<br />HALL</div><div class="map-label label-dorms">NORTH<br />DORMS</div>
+              <div class="road road-one"></div><div class="road road-two"></div><div class="road road-three"></div><div class="road road-four"></div>
+              <div class="route route-green"></div><div class="route route-coral"></div><div class="route route-yellow"></div>
+              <button class="map-stop stop-one" aria-label="Library stop"></button><button class="map-stop stop-two" aria-label="Student center stop"></button><button class="map-stop stop-three" aria-label="Arts Quad stop"></button><button class="map-stop stop-four" aria-label="North Dorms stop"></button><button class="map-stop stop-five" aria-label="Science Hall stop"></button>
+              <button class="bus bus-a" data-bus="LL-204">↗<span>LL-204</span></button><button class="bus bus-b" data-bus="LL-118">↗<span>LL-118</span></button><button class="bus bus-c" data-bus="LL-307">↗<span>LL-307</span></button>
+              <div class="map-controls"><button aria-label="Zoom in">+</button><button aria-label="Zoom out">−</button><button aria-label="Locate me">⌾</button></div>
+            </div>
+            <div class="map-footer"><span><i class="live-pulse"></i>3 buses active right now</span><button class="text-button">View full map <span>→</span></button></div>
+          </section>
+
+          <section class="departures panel" id="stops">
+            <div class="panel-heading"><div><p class="eyebrow">NEXT DEPARTURES</p><h2>Near you</h2></div><button class="text-button">See all <span>→</span></button></div>
+            <div class="location-chip"><span>⌖</span><span><strong>Library West</strong><small>300 ft away</small></span><span class="chevron">⌄</span></div>
+            <div class="departure-list">
+              <article class="departure"><div class="route-symbol green">G</div><div class="departure-info"><strong>Green Loop</strong><span>to South Village</span></div><div class="departure-time"><strong>2 min</strong><span>8:44 AM</span></div></article>
+              <article class="departure"><div class="route-symbol coral">R</div><div class="departure-info"><strong>Red Express</strong><span>to West Campus</span></div><div class="departure-time"><strong>6 min</strong><span>8:48 AM</span></div></article>
+              <article class="departure"><div class="route-symbol yellow">Y</div><div class="departure-info"><strong>Yellow Line</strong><span>to North Dorms</span></div><div class="departure-time"><strong>11 min</strong><span>8:53 AM</span></div></article>
+            </div>
+            <div class="search-stops"><span>⌕</span><input id="stopSearch" placeholder="Search a stop or route" aria-label="Search a stop or route" /></div>
+          </section>
+        </div>
+
+        <section class="lower-grid">
+          <div class="active-buses panel"><div class="panel-heading"><div><p class="eyebrow">ON THE MOVE</p><h2>Active buses</h2></div><span class="count-pill">3 vehicles</span></div><div class="bus-table"><div class="table-row table-head"><span>Vehicle</span><span>Route</span><span>Next stop</span><span>Status</span></div><div class="table-row"><span><b class="bus-id">LL-204</b><small>Electric shuttle</small></span><span><b class="route-text green-text">Green Loop</b></span><span>Arts Quad <small>2 min away</small></span><span class="status"><i></i>On time</span></div><div class="table-row"><span><b class="bus-id">LL-118</b><small>Electric shuttle</small></span><span><b class="route-text coral-text">Red Express</b></span><span>Library West <small>6 min away</small></span><span class="status"><i></i>On time</span></div><div class="table-row"><span><b class="bus-id">LL-307</b><small>Hybrid shuttle</small></span><span><b class="route-text yellow-text">Yellow Line</b></span><span>Science Hall <small>11 min away</small></span><span class="status delayed"><i></i>5 min late</span></div></div></div>
+          <div class="alerts panel" id="alerts"><div class="panel-heading"><div><p class="eyebrow">KEEP IN MIND</p><h2>Campus alerts</h2></div><span class="count-pill alert-count">2 active</span></div><div class="alert-item"><div class="mini-alert construction">⌁</div><div><strong>Construction detour</strong><p>Green Loop skips Arts Quad until 3:00 PM.</p><small>12 min ago</small></div></div><div class="alert-item"><div class="mini-alert info">i</div><div><strong>Stop closure</strong><p>East Gate stop is closed this week.</p><small>Yesterday</small></div></div></div>
+        </section>
+        <footer class="footer"><span>Loopline transit, made for Northbridge</span><span>Data refreshes every 30 seconds · <a href="#help">Need help?</a></span></footer>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
